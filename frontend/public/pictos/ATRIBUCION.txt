@@ -1,0 +1,4 @@
+Los símbolos pictográficos utilizados son propiedad del Gobierno de Aragón y han sido creados por Sergio Palao
+para ARASAAC (http://www.arasaac.org), que los distribuye bajo Licencia Creative Commons BY-NC-SA.
+
+Los archivos se descargan con scripts/fetch-pictograms.mjs a partir de la lista de shared/instrument.json.

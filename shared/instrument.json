@@ -1,0 +1,215 @@
+{
+  "version": "1.0.0",
+  "titulo": "Encuesta de Díadas",
+  "missing": { "no_sabe": -88, "sin_respuesta": -99 },
+  "scales": {
+    "likert5": [
+      { "code": 1, "label": "Muy en desacuerdo" },
+      { "code": 2, "label": "En desacuerdo" },
+      { "code": 3, "label": "Ni de acuerdo ni en desacuerdo" },
+      { "code": 4, "label": "De acuerdo" },
+      { "code": 5, "label": "Muy de acuerdo" },
+      { "code": -88, "label": "No sabe" }
+    ],
+    "licencia5": [
+      { "code": 5, "label": "Sí, siempre" },
+      { "code": 4, "label": "Sí, con algunas condiciones" },
+      { "code": 3, "label": "Depende de la situación" },
+      { "code": 2, "label": "Solo con muchas condiciones" },
+      { "code": 1, "label": "No, nunca" }
+    ],
+    "sino": [
+      { "code": 1, "label": "Sí" },
+      { "code": 0, "label": "No" }
+    ]
+  },
+  "blocks": [
+    { "id": "A", "titulo": "Identificación y localización", "minutos": 2 },
+    { "id": "B", "titulo": "Barrio caminable y mapa de preocupaciones", "minutos": 10 },
+    { "id": "C", "titulo": "Destinos frecuentes y régimen de acompañamiento", "minutos": 11 },
+    { "id": "D", "titulo": "Licencias de movilidad", "minutos": 2 },
+    { "id": "E", "titulo": "Disposición habilitante del cuidador", "minutos": 4 },
+    { "id": "F", "titulo": "Percepción del entorno", "minutos": 3 },
+    { "id": "G", "titulo": "Perfil de la persona con síndrome de Down", "minutos": 4 },
+    { "id": "H", "titulo": "Perfil del cuidador y del hogar", "minutos": 4 },
+    { "id": "P", "titulo": "Módulo de la persona con síndrome de Down", "minutos": 10 }
+  ],
+  "consignas": {
+    "C": "Piense en los lugares fuera de la casa a los que [NOMBRE] va habitualmente caminando, {solo|sola|solo} o {acompañado|acompañada|acompañado}. Si después sigue en micro o metro, cuente como lugar el paradero o la estación. Partamos por los que visita más seguido. Puede nombrar hasta cinco.",
+    "D": "Le voy a leer algunas cosas que [NOMBRE] podría hacer sin que {lo|la|lo} acompañe nadie. Para cada una, dígame si [NOMBRE] tiene permiso para hacerla {solo|sola|solo}.",
+    "E": "Ahora le voy a leer algunas frases. Para cada una, dígame qué tan de acuerdo o en desacuerdo está.",
+    "F": "Las siguientes frases son sobre el barrio. Para cada una, dígame qué tan de acuerdo o en desacuerdo está.",
+    "P": "Te voy a mostrar unas tarjetas con cosas que se hacen en el barrio. No hay respuestas buenas ni malas. Quiero saber cómo las haces tú."
+  },
+  "items": {
+    "A1a": { "block": "A", "type": "single", "scale": "sino", "text": "¿Usted es quien principalmente apoya en su vida diaria a la persona con síndrome de Down que participa en el estudio?", "label": "Filtro: cuidador principal" },
+    "A1b": { "block": "A", "type": "single", "scale": "sino", "text": "¿Esta persona tiene 18 años o más?", "label": "Filtro: 18 años o más" },
+    "A1c": { "block": "A", "type": "single", "scale": "sino", "text": "¿Vive en el Gran Santiago?", "label": "Filtro: vive en el Gran Santiago" },
+    "A3": { "block": "A", "type": "single", "text": "¿Cuál es su relación con [NOMBRE]?", "label": "Relación del cuidador con la persona", "otherCode": 6,
+      "options": [
+        { "code": 1, "label": "Madre" }, { "code": 2, "label": "Padre" }, { "code": 3, "label": "Hermano o hermana" },
+        { "code": 4, "label": "Otro familiar" }, { "code": 5, "label": "Cuidador remunerado" }, { "code": 6, "label": "Otro" } ] },
+
+    "C2": { "block": "C", "perDestination": true, "type": "single", "text": "¿Qué tipo de lugar es?", "label": "Tipo de lugar", "otherCode": 13,
+      "options": [
+        { "code": 1, "label": "Educación o taller" }, { "code": 2, "label": "Trabajo" },
+        { "code": 3, "label": "Comercio de barrio", "hint": "almacén, kiosco o feria" },
+        { "code": 4, "label": "Supermercado" }, { "code": 5, "label": "Centro comercial" },
+        { "code": 6, "label": "Otro comercio o servicio", "hint": "farmacia o banco" },
+        { "code": 7, "label": "Plaza o parque" }, { "code": 8, "label": "Casa de familiar o amigo" },
+        { "code": 9, "label": "Salud" }, { "code": 10, "label": "Deporte o recreación" }, { "code": 11, "label": "Iglesia" },
+        { "code": 12, "label": "Paradero o estación", "hint": "cuando el viaje continúa en micro o metro" },
+        { "code": 13, "label": "Otro" } ] },
+    "C4": { "block": "C", "perDestination": true, "type": "single", "text": "¿Con qué frecuencia va [NOMBRE] a este lugar?", "label": "Frecuencia de visita",
+      "options": [
+        { "code": 5, "label": "Todos o casi todos los días" }, { "code": 4, "label": "Varias veces a la semana" },
+        { "code": 3, "label": "Una vez a la semana" }, { "code": 2, "label": "Dos o tres veces al mes" },
+        { "code": 1, "label": "Una vez al mes o menos" } ] },
+    "C5": { "block": "C", "perDestination": true, "type": "single", "label": "Régimen de acompañamiento",
+      "text": "Pensando en cómo va [NOMBRE] a este lugar, ¿cuál de estas situaciones describe mejor lo que pasa actualmente?",
+      "help": "Considere que va {solo|sola|solo} cuando nadie va a su lado, aunque {lo|la|lo} llamen por teléfono o {lo|la|lo} esperen al llegar.",
+      "options": [
+        { "code": 1, "label": "Va siempre {acompañado|acompañada|acompañado}, y por ahora no está previsto que aprenda a ir {solo|sola|solo}" },
+        { "code": 2, "label": "Va {acompañado|acompañada|acompañado}, pero estamos trabajando en que aprenda a ir {solo|sola|solo}" },
+        { "code": 3, "label": "Va {solo|sola|solo} algunas veces, y otras {acompañado|acompañada|acompañado}" },
+        { "code": 4, "label": "Va {solo|sola|solo} habitualmente" } ] },
+    "C6": { "block": "C", "perDestination": true, "type": "multi", "text": "¿Con qué apoyos cuenta [NOMBRE] para ir a este lugar?", "label": "Apoyos del trayecto", "otherCode": 8, "exclusiveCode": 7,
+      "options": [
+        { "code": 1, "key": "lado", "label": "Alguien va a su lado" },
+        { "code": 2, "key": "espera", "label": "Alguien {lo|la|lo} espera al llegar o {lo|la|lo} va a buscar" },
+        { "code": 3, "key": "llaman", "label": "{Lo|La|Lo} llaman o siguen su ubicación por celular" },
+        { "code": 4, "key": "celular", "label": "Usa el celular para orientarse o pedir ayuda" },
+        { "code": 5, "key": "tarjeta", "label": "Lleva una tarjeta o identificación con datos de contacto" },
+        { "code": 6, "key": "conocidos", "label": "En el camino hay personas que {lo|la|lo} conocen", "hint": "vecinos, comerciantes o guardias" },
+        { "code": 7, "key": "ninguno", "label": "Ninguno" },
+        { "code": 8, "key": "otro", "label": "Otro" } ] },
+
+    "D1": { "block": "D", "type": "single", "scale": "licencia5", "text": "Ir caminando al negocio o almacén más cercano", "label": "Licencia: ir al negocio más cercano" },
+    "D2": { "block": "D", "type": "single", "scale": "licencia5", "text": "Cruzar {solo|sola|solo} una avenida principal", "label": "Licencia: cruzar una avenida principal" },
+    "D3": { "block": "D", "type": "single", "scale": "licencia5", "text": "Ir {solo|sola|solo} a un lugar del barrio donde no ha ido antes", "label": "Licencia: ir a un lugar desconocido del barrio" },
+    "D4": { "block": "D", "type": "single", "scale": "licencia5", "text": "Tomar {solo|sola|solo} la micro o el metro", "label": "Licencia: usar transporte público" },
+
+    "E1": { "block": "E", "type": "single", "scale": "likert5", "latent": "E", "sense": 1, "text": "Me parece bien que [NOMBRE] se mueva {solo|sola|solo} por el barrio.", "label": "E*: bien que se mueva sin compañía" },
+    "E2": { "block": "E", "type": "single", "scale": "likert5", "latent": "E", "sense": -1, "text": "Creo que [NOMBRE] va a necesitar toda la vida que alguien {lo|la|lo} acompañe para moverse fuera de la casa.", "label": "E*: dependencia permanente" },
+    "E3": { "block": "E", "type": "single", "scale": "likert5", "latent": "E", "sense": 1, "text": "Prefiero que [NOMBRE] vaya {solo|sola|solo} a hacer sus compras.", "label": "E*: prefiere que compre sin compañía" },
+    "E4": { "block": "E", "type": "single", "scale": "likert5", "latent": "E", "sense": -1, "text": "Aunque [NOMBRE] pueda ir {solo|sola|solo} a algunos lugares, prefiero {acompañarlo|acompañarla|acompañarlo}.", "label": "E*: prefiere acompañar" },
+    "E5": { "block": "E", "type": "single", "scale": "likert5", "latent": "E", "sense": 1, "reserve": true, "text": "Acepto que [NOMBRE] se equivoque de camino alguna vez, si eso le ayuda a aprender a moverse {solo|sola|solo}.", "label": "E* (reserva): acepta el error" },
+    "E6": { "block": "E", "type": "single", "scale": "likert5", "latent": "E", "sense": -1, "reserve": true, "text": "Cuando [NOMBRE] sale {solo|sola|solo}, me cuesta estar tranquilo o tranquila hasta que vuelve.", "label": "E* (reserva): intranquilidad" },
+    "E7": { "block": "E", "type": "single", "text": "Cuando salen juntos a actividades que no son obligatorias, como pasear o salir a distraerse, ¿quién decide habitualmente adónde ir?", "label": "Autonomía: quién decide adónde ir",
+      "options": [ { "code": 1, "label": "[NOMBRE] decide" }, { "code": 2, "label": "Deciden juntos" }, { "code": 3, "label": "Decide usted" } ] },
+
+    "F1": { "block": "F", "type": "single", "scale": "likert5", "latent": "F", "sense": 1, "text": "Las calles que [NOMBRE] tiene que cruzar para llegar a los lugares del barrio son seguras para {él|ella|él o ella}.", "label": "F*: seguridad vial" },
+    "F2": { "block": "F", "type": "single", "scale": "likert5", "latent": "F", "sense": 1, "text": "En el barrio hay vecinos o comerciantes que ayudarían a [NOMBRE] si tuviera un problema.", "label": "F*: apoyo social del barrio" },
+    "F3": { "block": "F", "type": "single", "scale": "likert5", "latent": "F", "sense": 1, "text": "En el barrio, las esquinas y los lugares se reconocen con facilidad.", "label": "F*: legibilidad" },
+    "F4": { "block": "F", "type": "single", "scale": "likert5", "latent": "F", "sense": -1, "text": "En el barrio hay personas que podrían aprovecharse de [NOMBRE] si estuviera sin compañía.", "label": "F*: vulnerabilidad frente a terceros" },
+    "F5": { "block": "F", "type": "single", "scale": "likert5", "latent": "F", "sense": -1, "text": "El ruido y el movimiento de las calles del barrio alteran a [NOMBRE].", "label": "F*: carga sensorial" },
+    "F6": { "block": "F", "type": "single", "scale": "likert5", "latent": "F", "sense": -1, "reserve": true, "text": "En el barrio hay situaciones, como el tránsito o los perros sueltos, que podrían complicar a [NOMBRE] si estuviera {solo|sola|solo}.", "label": "F* (reserva): situaciones que complican" },
+    "F7": { "block": "F", "type": "single", "scale": "likert5", "latent": "F", "sense": 1, "reserve": true, "text": "A pocas cuadras de la casa hay lugares que a [NOMBRE] le interesan.", "label": "F* (reserva): lugares de interés cercanos" },
+
+    "G1": { "block": "G", "type": "number", "min": 18, "max": 99, "unit": "años", "text": "¿Qué edad tiene [NOMBRE]?", "label": "Edad de la persona" },
+    "G2": { "block": "G", "type": "single", "text": "¿Cuál es el género de [NOMBRE]?", "label": "Género de la persona",
+      "options": [ { "code": 1, "label": "Femenino" }, { "code": 2, "label": "Masculino" }, { "code": 3, "label": "Otro" } ] },
+    "G3": { "block": "G", "type": "single", "text": "¿Cómo se comunica habitualmente [NOMBRE] con personas fuera de la familia?", "label": "Comunicación expresiva",
+      "options": [
+        { "code": 4, "label": "Habla con frases completas" }, { "code": 3, "label": "Habla con frases cortas" },
+        { "code": 2, "label": "Usa palabras sueltas" },
+        { "code": 1, "label": "Se comunica sin hablar", "hint": "por ejemplo con gestos, señas o imágenes" } ] },
+    "G4": { "block": "G", "type": "single", "text": "¿[NOMBRE] lee letreros, nombres de calles o números de micro?", "label": "Lectura de letreros y señales",
+      "options": [ { "code": 3, "label": "Sí, sin ayuda" }, { "code": 2, "label": "Sí, con ayuda" }, { "code": 1, "label": "No" } ] },
+    "G5": { "block": "G", "type": "single", "text": "¿[NOMBRE] usa teléfono celular?", "label": "Uso de teléfono celular",
+      "options": [ { "code": 3, "label": "Llama y usa aplicaciones" }, { "code": 2, "label": "Solo llama o contesta" }, { "code": 1, "label": "No usa" } ] },
+    "G6": { "block": "G", "type": "multi", "text": "¿[NOMBRE] tiene alguna otra condición que comprometa su forma de moverse o comunicarse?", "label": "Otras condiciones", "otherCode": 5, "exclusiveCode": 6,
+      "options": [
+        { "code": 1, "key": "tea", "label": "Condición del espectro autista" }, { "code": 2, "key": "visual", "label": "Dificultad visual" },
+        { "code": 3, "key": "auditiva", "label": "Dificultad auditiva" }, { "code": 4, "key": "motora", "label": "Dificultad motora" },
+        { "code": 5, "key": "otra", "label": "Otra" }, { "code": 6, "key": "ninguna", "label": "Ninguna" } ] },
+    "G7": { "block": "G", "type": "multi", "text": "¿Qué hace [NOMBRE] actualmente durante el día?", "label": "Actividad diaria", "otherCode": 6, "exclusiveCode": 7,
+      "options": [
+        { "code": 1, "key": "colegio", "label": "Colegio" }, { "code": 2, "key": "taller", "label": "Taller o programa" },
+        { "code": 3, "key": "trabajo_apoyo", "label": "Trabajo con apoyo" }, { "code": 4, "key": "trabajo_sin_apoyo", "label": "Trabajo sin apoyo" },
+        { "code": 5, "key": "hogar", "label": "Actividades en el hogar" }, { "code": 6, "key": "otra", "label": "Otra" },
+        { "code": 7, "key": "ninguna", "label": "Ninguna actividad regular" } ] },
+
+    "H1": { "block": "H", "type": "number", "min": 18, "max": 105, "unit": "años", "text": "¿Qué edad tiene usted?", "label": "Edad del cuidador" },
+    "H2": { "block": "H", "type": "single", "text": "¿Cuál es su género?", "label": "Género del cuidador",
+      "options": [ { "code": 1, "label": "Femenino" }, { "code": 2, "label": "Masculino" }, { "code": 3, "label": "Otro" } ] },
+    "H3": { "block": "H", "type": "single", "text": "¿Cuál es el nivel de estudios más alto que usted alcanzó?", "label": "Nivel de estudios del cuidador",
+      "options": [
+        { "code": 1, "label": "Escolar incompleta" }, { "code": 2, "label": "Escolar completa" },
+        { "code": 3, "label": "Técnica incompleta" }, { "code": 4, "label": "Técnica completa" },
+        { "code": 5, "label": "Universitaria incompleta" }, { "code": 6, "label": "Universitaria completa" },
+        { "code": 7, "label": "Posgrado incompleto" }, { "code": 8, "label": "Posgrado completo" } ] },
+    "H4": { "block": "H", "type": "single", "text": "¿Cuál es su situación laboral actual?", "label": "Situación laboral del cuidador", "otherCode": 5,
+      "options": [
+        { "code": 1, "label": "Trabaja remuneradamente" }, { "code": 2, "label": "Se dedica a los quehaceres del hogar" },
+        { "code": 3, "label": "Jubilado o jubilada" }, { "code": 4, "label": "Cesante" }, { "code": 5, "label": "Otro" } ] },
+    "H5": { "block": "H", "type": "single", "text": "En una semana normal, ¿cuántas horas acompaña usted a [NOMBRE] fuera de la casa?", "label": "Horas semanales de acompañamiento",
+      "options": [
+        { "code": 1, "label": "Menos de 2" }, { "code": 2, "label": "Entre 2 y 5" }, { "code": 3, "label": "Entre 6 y 10" },
+        { "code": 4, "label": "Entre 11 y 20" }, { "code": 5, "label": "Más de 20" } ] },
+    "H6": { "block": "H", "type": "multi", "text": "¿Quiénes acompañan habitualmente a [NOMBRE] fuera de la casa?", "label": "Red de cuidado", "otherCode": 8,
+      "options": [
+        { "code": 1, "key": "usted", "label": "Usted" }, { "code": 2, "key": "hermano", "label": "Hermano o hermana" },
+        { "code": 3, "key": "familiar", "label": "Otro familiar adulto" }, { "code": 4, "key": "amigos", "label": "Amigos o amigas" },
+        { "code": 5, "key": "vecinos", "label": "Vecinos o conocidos del barrio" }, { "code": 6, "key": "remunerado", "label": "Cuidador remunerado" },
+        { "code": 7, "key": "institucional", "label": "Transporte o programa institucional" }, { "code": 8, "key": "otro", "label": "Otro" } ] },
+    "H7": { "block": "H", "type": "number", "min": 0, "max": 99, "unit": "años", "text": "¿Hace cuántos años vive [NOMBRE] en este barrio?", "label": "Años en el barrio" },
+    "H8": { "block": "H", "type": "single", "text": "¿Cuántos automóviles hay en el hogar?", "label": "Automóviles en el hogar",
+      "options": [ { "code": 0, "label": "0" }, { "code": 1, "label": "1" }, { "code": 2, "label": "2 o más" } ] },
+    "H9": { "block": "H", "type": "single", "text": "¿Cuál es el ingreso mensual líquido del hogar?", "label": "Ingreso mensual líquido del hogar",
+      "options": [
+        { "code": 1, "label": "Menos de $300.000" }, { "code": 2, "label": "De $300.000 a $499.999" },
+        { "code": 3, "label": "De $500.000 a $699.999" }, { "code": 4, "label": "De $700.000 a $999.999" },
+        { "code": 5, "label": "De $1.000.000 a $1.999.999" }, { "code": 6, "label": "De $2.000.000 a $3.000.000" },
+        { "code": 7, "label": "Más de $3.000.000" }, { "code": -88, "label": "No sabe" }, { "code": -99, "label": "No desea contestar" } ] },
+    "H10": { "block": "H", "type": "single", "scale": "sino", "text": "¿Vive usted con [NOMBRE]?", "label": "Cuidador convive con la persona" },
+    "H11": { "block": "H", "type": "single", "scale": "sino", "text": "Cuando se eligió el lugar donde vive [NOMBRE], ¿se tomaron en cuenta sus necesidades?", "label": "Elección residencial consideró sus necesidades" },
+    "H11r": { "block": "H", "type": "multi", "text": "¿Por qué razones?", "label": "Razones de la elección residencial", "otherCode": 5, "showIf": { "item": "H11", "equals": 1 },
+      "options": [
+        { "code": 1, "key": "servicios", "label": "Cercanía a servicios, colegio o programas" },
+        { "code": 2, "key": "tranquilo", "label": "Barrio más tranquilo o seguro" },
+        { "code": 3, "key": "red", "label": "Cercanía a familiares o red de apoyo" },
+        { "code": 4, "key": "transporte", "label": "Conexión con transporte público" },
+        { "code": 5, "key": "otra", "label": "Otra" } ] }
+  },
+  "P": {
+    "actividades": [
+      { "id": "comprar", "label": "Comprar en el negocio", "picto": 35695, "licencia": "D1" },
+      { "id": "plaza", "label": "Ir a la plaza", "picto": 6184 },
+      { "id": "cruzar", "label": "Cruzar una calle grande", "picto": 37087, "licencia": "D2" },
+      { "id": "micro", "label": "Tomar la micro", "picto": 36593, "licencia": "D4" },
+      { "id": "amigo", "label": "Ir a la casa de un amigo o amiga", "picto": 4772 },
+      { "id": "actividad", "label": "Ir al colegio, al taller o al trabajo", "picto": 3082,
+        "variantes": [
+          { "id": "colegio", "label": "Ir al colegio", "picto": 3082 },
+          { "id": "taller", "label": "Ir al taller", "picto": 11655 },
+          { "id": "trabajo", "label": "Ir al trabajo", "picto": 6624 } ] }
+    ],
+    "control": [
+      { "id": "dientes", "label": "Lavarme los dientes", "picto": 6971, "esperadoPorDefecto": 1 },
+      { "id": "auto", "label": "Manejar un auto", "picto": 6458, "esperadoPorDefecto": 0 },
+      { "id": "caballo", "label": "Andar a caballo", "picto": 6643, "esperadoPorDefecto": 0 },
+      { "id": "avion", "label": "Pilotar un avión", "picto": 3370, "esperadoPorDefecto": 0 }
+    ],
+    "P2": { "pregunta": "¿Haces esto?", "categorias": [
+      { "code": 1, "label": "Sí lo hago", "picto": 5584 }, { "code": 0, "label": "No lo hago", "picto": 5526 } ] },
+    "P3": { "pregunta": "¿Cómo lo haces?", "categorias": [
+      { "code": 1, "label": "Voy {solo|sola|solo o sola}", "picto": 6044, "tone": "solo" },
+      { "code": 2, "label": "Voy con alguien", "picto": 37485, "tone": "con" },
+      { "code": 3, "label": "No voy", "picto": 5526, "tone": "no" } ] },
+    "P4": { "pregunta": "¿Cómo te gustaría hacerlo?", "categorias": [
+      { "code": 1, "label": "Me gustaría hacerlo {solo|sola|solo o sola}", "picto": 6044, "tone": "solo" },
+      { "code": 2, "label": "Me gustaría hacerlo con alguien", "picto": 37485, "tone": "con" },
+      { "code": 3, "label": "No me interesa", "picto": 6156, "tone": "no" } ] },
+    "noAplicaRazones": [
+      { "code": 1, "label": "Su forma de comunicarse no permite aplicar el módulo" },
+      { "code": 2, "label": "La persona no quiso participar" },
+      { "code": 3, "label": "La persona no está presente" },
+      { "code": 4, "label": "No se verificó la comprensión de la tarea" },
+      { "code": 5, "label": "Otra razón" } ]
+  },
+  "pictos": {
+    "ids": [6044, 37485, 5526, 6156, 37087, 35695, 6184, 36593, 4772, 3082, 11655, 6624, 6971, 6458, 6643, 3370, 7217, 2912, 37185, 5584, 12317, 6517, 5358],
+    "atribucion": "Los símbolos pictográficos utilizados son propiedad del Gobierno de Aragón y han sido creados por Sergio Palao para ARASAAC (http://www.arasaac.org), que los distribuye bajo Licencia Creative Commons BY-NC-SA."
+  }
+}
